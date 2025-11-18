@@ -32,8 +32,6 @@ import java.util.UUID;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collector;
-import net.kyori.adventure.bossbar.BossBar;
-import net.kyori.adventure.bossbar.BossBarViewer;
 import net.kyori.adventure.chat.ChatType;
 import net.kyori.adventure.chat.SignedMessage;
 import net.kyori.adventure.dialog.DialogLike;
@@ -95,7 +93,6 @@ import net.kyori.adventure.title.TitlePart;
  * and any new methods will be stubbed by default.</p>
  *
  * @see ForwardingAudience
- * @see BossBarViewer
  * @since 4.0.0
  */
 public interface Audience extends Pointered {
@@ -419,26 +416,6 @@ public interface Audience extends Pointered {
    * @since 4.0.0
    */
   default void resetTitle() {
-  }
-
-  /**
-   * Shows a boss bar.
-   *
-   * @param bar a boss bar
-   * @see BossBar
-   * @since 4.0.0
-   */
-  default void showBossBar(final BossBar bar) {
-  }
-
-  /**
-   * Hides a boss bar.
-   *
-   * @param bar a boss bar
-   * @see BossBar
-   * @since 4.0.0
-   */
-  default void hideBossBar(final BossBar bar) {
   }
 
   /**

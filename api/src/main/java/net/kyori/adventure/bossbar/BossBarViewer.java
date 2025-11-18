@@ -31,6 +31,27 @@ import org.jetbrains.annotations.UnmodifiableView;
  * @since 4.14.0
  */
 public interface BossBarViewer {
+
+  /**
+   * Shows a boss bar.
+   *
+   * @param bar a boss bar
+   * @see BossBar
+   * @since 4.0.0
+   */
+  default void showBossBar(final BossBar bar) {
+  }
+
+  /**
+   * Hides a boss bar.
+   *
+   * @param bar a boss bar
+   * @see BossBar
+   * @since 4.0.0
+   */
+  default void hideBossBar(final BossBar bar) {
+  }
+
   /**
    * Gets an unmodifiable view of all known currently active bossbars.
    *

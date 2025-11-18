@@ -31,7 +31,6 @@ import java.util.UUID;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
-import net.kyori.adventure.bossbar.BossBar;
 import net.kyori.adventure.chat.ChatType;
 import net.kyori.adventure.chat.SignedMessage;
 import net.kyori.adventure.dialog.DialogLike;
@@ -150,16 +149,6 @@ public interface ForwardingAudience extends Audience {
   @Override
   default void resetTitle() {
     for (final Audience audience : this.audiences()) audience.resetTitle();
-  }
-
-  @Override
-  default void showBossBar(final BossBar bar) {
-    for (final Audience audience : this.audiences()) audience.showBossBar(bar);
-  }
-
-  @Override
-  default void hideBossBar(final BossBar bar) {
-    for (final Audience audience : this.audiences()) audience.hideBossBar(bar);
   }
 
   @Override
@@ -331,16 +320,6 @@ public interface ForwardingAudience extends Audience {
     @Override
     default void resetTitle() {
       this.audience().resetTitle();
-    }
-
-    @Override
-    default void showBossBar(final BossBar bar) {
-      this.audience().showBossBar(bar);
-    }
-
-    @Override
-    default void hideBossBar(final BossBar bar) {
-      this.audience().hideBossBar(bar);
     }
 
     @Override

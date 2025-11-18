@@ -24,7 +24,6 @@
 package net.kyori.adventure.bossbar;
 
 import java.util.Set;
-import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.ComponentLike;
 import net.kyori.adventure.util.Index;
@@ -342,10 +341,10 @@ public sealed interface BossBar permits BossBarImpl {
    *
    * @param viewer the viewer
    * @return the bossbar
-   * @see Audience#showBossBar(BossBar)
+   * @see BossBarViewer#showBossBar(BossBar)
    * @since 4.14.0
    */
-  default BossBar addViewer(final Audience viewer) {
+  default BossBar addViewer(final BossBarViewer viewer) {
     viewer.showBossBar(this);
     return this;
   }
@@ -355,10 +354,10 @@ public sealed interface BossBar permits BossBarImpl {
    *
    * @param viewer the viewer
    * @return the bossbar
-   * @see Audience#hideBossBar(BossBar)
+   * @see BossBarViewer#hideBossBar(BossBar)
    * @since 4.14.0
    */
-  default BossBar removeViewer(final Audience viewer) {
+  default BossBar removeViewer(final BossBarViewer viewer) {
     viewer.hideBossBar(this);
     return this;
   }
